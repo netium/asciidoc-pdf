@@ -26,4 +26,8 @@ VOLUME /var/asciidocs
 
 WORKDIR /var/asciidocs
 
+ENV GRAPHVIZ_DOT=/usr/bin/dot
+
+ENV DOT=/usr/bin/dot
+
 CMD [ "/usr/bin/bash", "/usr/bin/build.sh"]
