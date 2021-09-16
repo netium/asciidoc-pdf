@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 RUN apt update
 
-RUN apt install ruby openjdk-16-jre-headless -y
+RUN apt install ruby openjdk-16-jre-headless graphviz -y
 
 RUN gem install asciidoctor
 
