@@ -1,24 +1,14 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt update
+RUN apk add --no-cache ruby openjdk11-jre-headless graphviz
 
-RUN apt install ruby openjdk-16-jre-headless graphviz -y
+RUN gem install asciidoctor asciidoctor-kroki asciidoctor-pdf asciidoctor-diagram
 
-RUN gem install asciidoctor
-
-RUN gem install asciidoctor-kroki
-
-RUN gem install asciidoctor-pdf
-
-RUN gem install asciidoctor-diagram
-
-RUN gem install rouge 
-
-RUN gem install coderay
+RUN gem install rouge coderay
 
 RUN mkdir -p /var/asciidocs
 
-COPY ./build.sh usr/bin/
+COPY ./build.sh /usr/bin/
 
 RUN chmod +x /usr/bin/build.sh
 
@@ -30,4 +20,4 @@ ENV GRAPHVIZ_DOT=/usr/bin/dot
 
 ENV DOT=/usr/bin/dot
 
-CMD [ "/usr/bin/bash", "/usr/bin/build.sh"]
+CMD [ "/bin/sh", "/usr/bin/build.sh"]
