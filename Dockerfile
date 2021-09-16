@@ -12,6 +12,10 @@ RUN gem install asciidoctor-pdf
 
 RUN gem install asciidoctor-diagram
 
+RUN gem install rouge 
+
+RUN gem install coderay
+
 RUN mkdir -p /var/asciidocs
 
 COPY ./build.sh usr/bin/
