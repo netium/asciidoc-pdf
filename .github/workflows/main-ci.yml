@@ -20,7 +20,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: netium/asciidoctor-pdf
-        tags: latest
+        addLatest: true
         registry: docker.io
         username: ${{ secrets.DOCKERHUB_USER_ID }}
         password: ${{ secrets.DOCKERHUB_USER_SECRET }}
