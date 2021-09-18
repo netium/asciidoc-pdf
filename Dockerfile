@@ -1,10 +1,16 @@
 FROM alpine:latest
 
-RUN apk add --no-cache ruby openjdk11-jre-headless graphviz
+#RUN apk add --no-cache ruby openjdk11-jre-headless graphviz
+#RUN echo -e http://mirrors.ustc.edu.cn/alpine/v3.14/main > /etc/apk/repositories
 
-RUN gem install asciidoctor asciidoctor-kroki asciidoctor-pdf asciidoctor-diagram
+RUN apk add --no-cache ruby-dev make gcc musl-dev
+
+#RUN gem install asciidoctor asciidoctor-kroki asciidoctor-pdf asciidoctor-diagram
+RUN gem install asciidoctor asciidoctor-kroki asciidoctor-pdf json
 
 RUN gem install rouge coderay
+
+RUN apk del make gcc musl-dev
 
 RUN mkdir -p /var/asciidocs
 
