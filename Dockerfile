@@ -1,5 +1,5 @@
 #FROM alpine:latest
-FROM adoptopenjdk/openjdk16:x86_64-alpine-jdk-16.0.1_9
+FROM adoptopenjdk/openjdk16:ubi
 
 #RUN apk add --no-cache ruby openjdk11-jre-headless graphviz
 #RUN echo -e http://mirrors.ustc.edu.cn/alpine/v3.14/main > /etc/apk/repositories
