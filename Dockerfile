@@ -4,7 +4,7 @@ FROM adoptopenjdk/openjdk16:ubi
 #RUN apk add --no-cache ruby openjdk11-jre-headless graphviz
 #RUN echo -e http://mirrors.ustc.edu.cn/alpine/v3.14/main > /etc/apk/repositories
 
-RUN apk add --no-cache ruby-dev make gcc musl-dev fontconfig ttf-dejavu 
+RUN apk add --no-cache ruby-dev make gcc musl-dev fontconfig ttf-dejavu graphviz
 
 #RUN gem install asciidoctor asciidoctor-kroki asciidoctor-pdf asciidoctor-diagram
 RUN gem install asciidoctor asciidoctor-kroki asciidoctor-pdf asciidoctor-diagram json
